@@ -1,0 +1,2 @@
+(()=>{var e={271:e=>{e.exports={entry:"./src/index.tsx",output:{filename:"bundle.js",path:"//dist"},devtool:"source-map",resolve:{extensions:[".ts",".tsx",".js",".json"]},module:{rules:[{test:/\.tsx?$/,loader:"awesome-typescript-loader"},{enforce:"pre",test:/\.js$/,loader:"source-map-loader"}]},externals:{react:"React","react-dom":"ReactDOM"}}}},t={};!function r(s){if(t[s])return t[s].exports;var o=t[s]={exports:{}};return e[s](o,o.exports,r),o.exports}(271)})();
+//# sourceMappingURL=bundle.js.map
