@@ -1,9 +1,20 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
-import { Hello } from "./components/Hello";
+import HomeLayout from "./page/home-layout";
+import Login from "./page/login";
+import Home from "./page/home";
 
 ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
-    document.getElementById("example")
+  <BrowserRouter>
+    {/* <Route exact path="/login" component={Login} />
+    <Route path="/" component={HomeLayout}>
+      <Route path="home" component={Home} />
+    </Route> */}
+    <Route exact path="/login" component={Login} />
+    <Route path="/" component={Home} />
+    <Redirect to="/" />
+  </BrowserRouter>,
+  document.getElementById("root")
 );

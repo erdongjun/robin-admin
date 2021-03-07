@@ -1,11 +1,29 @@
-import * as React from "react";
+// import * as React from 'react';
+// import { DatePicker } from 'antd';
 
-export interface HelloProps { compiler: string; framework: string; }
+// // 'HelloProps' describes the shape of props.
+// // State is never set so we use the '{}' type.
 
-// 'HelloProps' describes the shape of props.
-// State is never set so we use the '{}' type.
-export class Hello extends React.Component<HelloProps, {}> {
-    render() {
-        return <h1>Hello from {this.props.compiler} and {this.props.framework}!</h1>;
-    }
-}
+// import './index.less';
+
+// export interface HelloProps { compiler: string; framework: string; }
+
+// export class Hello extends React.Component<HelloProps, {}> {
+//   render() {
+//     return (
+//       <div>
+//         <h1 className="title">
+//           Hello from
+//           {' '}
+//           {this.props.compiler}
+//           {' '}
+//           and
+//           {' '}
+//           {this.props.framework}
+//           !
+//         </h1>
+//         <DatePicker />
+//       </div>
+//     );
+//   }
+// }

@@ -1,17 +1,17 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: {
     vendor: ["react", "react-dom"],
     index: path.resolve(__dirname, "../src/index.tsx"),
   },
 
   output: {
-    filename: "[name].bundle.js",
-    // path: path.resolve(__dirname, '../dist'),
+    filename: "[name].[hash].js",
     path: path.resolve(__dirname, "../dist"),
   },
 
@@ -20,24 +20,16 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
   },
-
   module: {
     rules: [
       // css
       {
         test: /\.(less|css)$/,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
-          {
-            loader: "less-loader",
-            options: {
-              lessOptions: {
-                javascriptEnabled: true,
-              },
-            },
-          },
+          "less-loader",
         ],
       },
       // tsx
@@ -68,14 +60,15 @@ module.exports = {
       { test: /\.(jpg|png|gif|bmp|jpeg)$/, loader: "url-loader" },
     ],
   },
-
-  devServer: {
-    contentBase: path.resolve(__dirname, "../dist"),
-    hot: true,
-    port: 3001,
+  optimization: {
+    minimizer: [],
   },
   plugins: [
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].[hash].css",
+      // ignoreOrder: true,
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../src/index.html"),
     }),
