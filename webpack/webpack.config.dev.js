@@ -72,6 +72,8 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, "../dist"),
     hot: true,
+    inline: true,
+    overlay: true,
     port: 3001,
   },
   plugins: [

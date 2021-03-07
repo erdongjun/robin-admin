@@ -14,5 +14,20 @@
         "language": "typescriptreact",
         "autoFix": true
     },
-  ]
+  ],
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+        "semi": false,
+        "singleQuote": true
+    }
+  },
+  "eslint.codeAction.showDocumentation": {
+
+    "enable": true
+  },
+  "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
+  "prettier.semi": false,
+  "typescript.format.insertSpaceAfterSemicolonInForStatements": false,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true
 }

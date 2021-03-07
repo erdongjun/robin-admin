@@ -65,12 +65,9 @@
     "webpack-dev-server": "^3.11.2"
   },
   "browserslist": [
-    "defaults",
-    "not ie <= 8",
-    "last 2 versions",
-    "> 1%",
-    "iOS >= 7",
-    "Android >= 4.0"
+    "> 2%",
+    "last 5 versions",
+    "not dead"
   ],
   "husky": {
     "hooks": {
