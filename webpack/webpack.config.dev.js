@@ -72,9 +72,10 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, "../dist"),
     hot: true,
-    inline: true,
+    inline: false,
     overlay: true,
     port: 3001,
+    historyApiFallback: true,
   },
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
